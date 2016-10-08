@@ -4,19 +4,19 @@ var buttonHandler = (function(){
 	socket.on('changedProfile', function(data){
 		console.log(data);
 	});
-	
+
 	socket.on('savedProfile', function(data){
 		console.log(data);
 	});
-	
+
 	socket.on('settings', function(data){
 		console.log(data);
 	});
-	
+
 	socket.on('controlling', function(data){
 		console.log(data);
 	});
-	
+
 	return function(type){
 		switch (type) {
 			case 'get':
@@ -34,7 +34,7 @@ var buttonHandler = (function(){
 			case 'ChangeSpeed':
 				socket.emit('ChangeSpeed', {
 					msg: "ChangeSpeed",
-					speed: Number((Math.random() + 1).toFixed(2))
+					speed: getSliderValue()
 				});
 				break;
 			case 'Stop':
@@ -48,3 +48,10 @@ var buttonHandler = (function(){
 		}
 	}
 })();
+
+function getSliderValue(){
+	var value = document.getElementById('slider1').value;
+	value = value/100
+	value = 1+value;
+	return value;
+}
