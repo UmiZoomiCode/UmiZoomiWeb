@@ -36,6 +36,13 @@ var buttonHandler = (function(){
 					msg: "ChangeSpeed",
 					speed: Number((Math.random() + 1).toFixed(2))
 				});
+				break;
+			case 'Stop':
+				socket.emit('Stop', {
+					msg: "ChangeSpeed",
+					speed: 0
+				});
+				break;
 			default:
 				break;
 		}
