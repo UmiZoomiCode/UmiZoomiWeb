@@ -38,6 +38,7 @@ var buttonHandler = (function(){
 				});
 				break;
 			case 'Stop':
+				document.getElementById('slider1').value=0;
 				socket.emit('Stop', {
 					msg: "ChangeSpeed",
 					speed: 0
@@ -51,7 +52,8 @@ var buttonHandler = (function(){
 
 function getSliderValue(){
 	var value = document.getElementById('slider1').value;
-	value = value/100
+	value = value/10;
 	value = 1+value;
+	console.log(value);
 	return value;
 }
