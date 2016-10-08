@@ -52,6 +52,7 @@ var buttonHandler = (function(){
 
 function getSliderValue(){
 	var value = document.getElementById('slider1').value;
+	if(value==0) return 0;
 	value = value/10;
 	value = 1+value;
 	console.log(value);
