@@ -13,6 +13,10 @@ var buttonHandler = (function(){
 		console.log(data);
 	});
 	
+	socket.on('controlling', function(data){
+		console.log(data);
+	});
+	
 	return function(type){
 		switch (type) {
 			case 'get':
@@ -24,6 +28,14 @@ var buttonHandler = (function(){
 			case 'save':
 				socket.emit('saveProfile');
 				break;
+			case 'control':
+				socket.emit('control');
+				break;
+			case 'ChangeSpeed':
+				socket.emit('ChangeSpeed', {
+					msg: "ChangeSpeed",
+					speed: Number((Math.random() + 1).toFixed(2))
+				});
 			default:
 				break;
 		}
