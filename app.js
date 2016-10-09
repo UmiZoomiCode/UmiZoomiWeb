@@ -39,7 +39,7 @@ var buttonHandler = (function(){
 				break;
 			case 'Stop':
 				document.getElementById('slider1').value=0;
-				socket.emit('Stop', {
+				socket.emit('ChangeSpeed', {
 					msg: "ChangeSpeed",
 					speed: 0
 				});
