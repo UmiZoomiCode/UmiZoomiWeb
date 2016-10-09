@@ -56,5 +56,5 @@ function getSliderValue(){
 	value = value/10;
 	value = 1+value;
 	console.log(value);
-	return value;
+	return value+"0";
 }
